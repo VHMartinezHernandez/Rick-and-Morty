@@ -1,0 +1,32 @@
+.login {
+  /* border:.5px solid #fff; */
+  background: rgb(161, 156, 95);
+  opacity: 0.9;
+  border-radius: 10px;
+  box-shadow: 0px 0px 10px #000;
+  box-sizing: border-box;
+  padding-top: 15px;
+  padding-bottom: 10%;
+  margin: 5% auto;
+  text-align: center;
+  width: 200px;
+  height: 300px;
+  font-family: 'Noto Sans', sans-serif;
+}
+
+.background-container {
+  background-image: url("./img/4.jpeg");
+  background-size: cover;
+  background-position: center;
+  height: 100vh;
+}
+
+button {
+ 
+  cursor: pointer;
+  border: none;
+  padding: 10px 20px;
+  border-radius: 5px;
+  font-size: 15px;
+  transition: backgroun-color 0.4s ease;
+}
