@@ -29,14 +29,33 @@ function App() {
    const PASSWORD = "mipass123"
 
    //Controladores de evento
-   function onSearch(id) {
-      axios(`https://rickandmortyapi.com/api/character/${id}`).then(({ data }) => {
-         if (data.name && !characters.find((char) => char.id === data.id)) {
-            setCharacters((oldChars) => [...oldChars, data]);
+   // function onSearch(id) {
+   //    axios( `http://localhost:3001/rickandmorty/character/${id}`).then(({ data }) => {
+   //       if (data.name && !characters.find((char) => char.id === data.id)) {
+   //          setCharacters((oldChars) => [...oldChars, data]);
+   //       } else {
+   //          window.alert('Este personaje ya se encunetra agregado');
+   //       }
+   //    });
+   // }
+
+   const onSearch = (id) => {
+      // const URL_BASE = "http://localhost:3001/rickandmorty"
+      const URL_BASE = "http://localhost:3001/rickandmorty/onsearch/"
+
+      if(characters.find((char) => char.id === id)){
+         return alert ("Este personaje ya se encuentra agregado");
+      }
+
+      fetch(`${URL_BASE}/character/${id}`)
+      .then((response) => response.json())
+      .then((data) => {
+         if(data.name) {
+            setCharacters((oldChars) => [...oldChars, data]);            
          } else {
-            window.alert('Este personaje ya se encunetra agregado');
+            alert ("Algo salio mal")
          }
-      });
+      })
    }
 
    function onClose (id) {

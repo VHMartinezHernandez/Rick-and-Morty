@@ -9,7 +9,7 @@ const Detail = () => {
     const [character,setCharacter] = useState({});
 
     useEffect(() => {
-        axios(`https://rickandmortyapi.com/api/character/${id}`).then(({ data }) => {           
+        axios(`http://localhost:3001/rickandmorty/detail/${id}`).then(({ data }) => {           
             setCharacter(data);         
         });
         return setCharacter({});
